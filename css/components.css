@@ -250,10 +250,17 @@ footer {
   align-items: center;
   justify-content: center;
   font-size: 14px;
+  color: var(--text2);
   transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+.footer-social a img {
+  width: 18px;
+  height: 18px;
+  color: var(--text2);
 }
 .footer-social a:hover {
   border-color: rgba(79,142,247,0.4);
   background: rgba(79,142,247,0.08);
+  color: var(--accent);
   transform: translateY(-2px);
 }
