@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sourav Mishra | Portfolio</title>
+  <meta name="description" content="Full Stack Developer — Sourav Mishra. Building fast, scalable, and user-friendly web applications." />
+  <meta name="theme-color" content="#06080f" />
+  <meta property="og:title" content="Sourav Mishra | Portfolio" />
+  <meta property="og:description" content="Full Stack Developer — Sourav Mishra. Building fast, scalable, and user-friendly web applications." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sourav Mishra | Portfolio" />
+  <meta name="twitter:description" content="Full Stack Developer — Sourav Mishra. Building fast, scalable, and user-friendly web applications." />
+
+  <!-- ── Google Fonts ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- ── Three.js (global) ── -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+  <!-- ── Stylesheets ── -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ── Top scroll progress bar ── -->
+  <div id="progress-bar"></div>
+
+  <!-- ── Custom cursor layers ── -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+  <div id="cursor-glow"></div>
+
+  <!-- ── Loader overlay ── -->
+  <div id="loader">
+    <div class="loader-logo">SM</div>
+    <div class="loader-bar">
+      <div class="loader-fill" id="loader-fill"></div>
+    </div>
+    <div class="loader-text" id="loader-text">Initializing...</div>
+  </div>
+
+  <!-- ── Parallax background orbs ── -->
+  <div class="orb orb-1" id="orb1"></div>
+  <div class="orb orb-2" id="orb2"></div>
+  <div class="orb orb-3" id="orb3"></div>
+
+  <!-- ── Three.js ambient background ── -->
+  <canvas id="canvas-bg"></canvas>
+
+  <!-- ════════════════════════════════════════
+       NAVBAR
+       ════════════════════════════════════════ -->
+  <nav id="navbar">
+    <a href="#home" class="nav-brand">Sourav Mishra</a>
+    <ul class="nav-links">
+      <li><a href="#home"         class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ════════════════════════════════════════
+       HERO
+       ════════════════════════════════════════ -->
+  <section id="home">
+    <div class="hero-inner">
+
+      <!-- Left: text content -->
+      <div class="hero-content">
+        <div class="hero-tag">Available for opportunities</div>
+        <h1 class="hero-name">
+          <span>Sourav</span>
+          <span>Mishra</span>
+        </h1>
+        <p class="hero-role">Full Stack Developer</p>
+        <p class="hero-desc">
+          I build fast, scalable, and user-friendly web applications —
+          turning ideas into seamless digital experiences with clean code
+          and sharp design.
+        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-primary">View My Work →</a>
+          <a href="https://drive.google.com/file/d/1HYZWGqCha2k5uEgZALqRYHHhwND6UeoP/view"
+             target="_blank" rel="noopener" class="btn-secondary">Download CV</a>
+        </div>
+      </div>
+
+      <!-- Right: 3D canvas + stat chips -->
+      <div class="hero-canvas-wrap">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-chips">
+          <div class="chip"><span>95%</span> JavaScript</div>
+          <div class="chip"><span>90%</span> Python / Flask</div>
+          <div class="chip"><span>2+</span> Yrs Experience</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="scroll-cue">
+      <div class="scroll-cue-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       ABOUT
+       ════════════════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <p class="section-label">Who I Am</p>
+      <h2 class="section-title">
+        Crafting digital<br>
+        <span class="accent-word">experiences</span>
+      </h2>
+
+      <div class="about-grid">
+        <!-- Photo -->
+        <div class="about-img-wrap">
+          <div class="about-img-frame">
+            <img
+              src="https://portfolio-website-pi-one-55.vercel.app/assets/aboutimg.jpg"
+              alt="Sourav Mishra"
+              loading="lazy"
+            />
+          </div>
+          <div class="about-glow"></div>
+          <div class="about-badge">
+            <div class="about-badge-num">2+</div>
+            <div class="about-badge-text">Years Experience</div>
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div class="about-text">
+          <p>
+            Hi, I'm <strong>Sourav Mishra</strong> — a passionate full-stack
+            developer based in Cuttack, India, with over 2 years of hands-on
+            experience building scalable digital solutions.
+          </p>
+          <p>
+            I specialize in frontend development but love the challenge of
+            working across the entire stack — from pixel-perfect UIs to
+            robust backend architectures.
+          </p>
+          <div class="about-details">
+            <div class="about-detail">
+              <div class="about-detail-label">Location</div>
+              <div class="about-detail-val">📍 Cuttack, India</div>
+            </div>
+            <div class="about-detail">
+              <div class="about-detail-label">Email</div>
+              <div class="about-detail-val">✉ tonalmango@gmail.com</div>
+            </div>
+            <div class="about-detail">
+              <div class="about-detail-label">Education</div>
+              <div class="about-detail-val">🎓 B.Tech CS</div>
+            </div>
+            <div class="about-detail">
+              <div class="about-detail-label">Status</div>
+              <div class="about-detail-val">✅ Open to Work</div>
+            </div>
+          </div>
+          <a
+            href="https://drive.google.com/file/d/1HYZWGqCha2k5uEgZALqRYHHhwND6UeoP/view"
+            target="_blank" rel="noopener"
+            class="btn-primary"
+            style="width: fit-content;"
+          >Download Resume →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       SKILLS
+       ════════════════════════════════════════ -->
+  <section id="skills">
+    <div class="container">
+      <p class="section-label">What I Do</p>
+      <h2 class="section-title">Technical <span class="accent-word">proficiency</span></h2>
+
+      <div class="skills-layout">
+        <!-- Skill category cards -->
+        <div class="skill-cards">
+          <div class="skill-card">
+            <div class="skill-card-icon">⚡</div>
+            <div class="skill-card-title">Frontend Development</div>
+            <div class="skill-card-desc">HTML · CSS · JavaScript · React</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-card-icon">🎨</div>
+            <div class="skill-card-title">UI/UX Design</div>
+            <div class="skill-card-desc">Figma · Wireframing · Prototyping</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-card-icon">🛠</div>
+            <div class="skill-card-title">Backend Development</div>
+            <div class="skill-card-desc">Flask · Node.js · Express.js · MongoDB</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-card-icon">📱</div>
+            <div class="skill-card-title">Responsive Design</div>
+            <div class="skill-card-desc">Mobile-first · Cross-browser compatibility</div>
+          </div>
+        </div>
+
+        <!-- Proficiency bars -->
+        <div class="proficiency">
+          <div class="prof-item">
+            <div class="prof-header">
+              <span class="prof-name">JavaScript / HTML / CSS</span>
+              <span class="prof-pct">95%</span>
+            </div>
+            <div class="prof-track">
+              <div class="prof-fill" data-width="95"></div>
+            </div>
+          </div>
+          <div class="prof-item">
+            <div class="prof-header">
+              <span class="prof-name">Python / Flask</span>
+              <span class="prof-pct">90%</span>
+            </div>
+            <div class="prof-track">
+              <div class="prof-fill" data-width="90"></div>
+            </div>
+          </div>
+          <div class="prof-item">
+            <div class="prof-header">
+              <span class="prof-name">UI/UX Design</span>
+              <span class="prof-pct">85%</span>
+            </div>
+            <div class="prof-track">
+              <div class="prof-fill" data-width="85"></div>
+            </div>
+          </div>
+          <div class="prof-item">
+            <div class="prof-header">
+              <span class="prof-name">Node.js / Express.js</span>
+              <span class="prof-pct">80%</span>
+            </div>
+            <div class="prof-track">
+              <div class="prof-fill" data-width="80"></div>
+            </div>
+          </div>
+          <div class="prof-item">
+            <div class="prof-header">
+              <span class="prof-name">MongoDB / Databases</span>
+              <span class="prof-pct">75%</span>
+            </div>
+            <div class="prof-track">
+              <div class="prof-fill" data-width="75"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       PROJECTS
+       ════════════════════════════════════════ -->
+  <section id="projects">
+    <div class="container">
+      <p class="section-label">Work</p>
+      <h2 class="section-title">Featured <span class="accent-word">projects</span></h2>
+
+      <div class="projects-grid">
+
+        <div class="project-card tilt-card">
+          <div class="project-img">
+            <img src="https://portfolio-website-pi-one-55.vercel.app/assets/T-shirt.png" alt="E-Commerce" loading="lazy" />
+            <div class="project-img-overlay"></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">E-Commerce Website</h3>
+            <p class="project-desc">
+              Fully responsive e-commerce platform with shopping cart,
+              user authentication, and payment integration.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">JavaScript</span>
+              <span class="project-tag">Flask</span>
+              <span class="project-tag">SQLAlchemy</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/tonalmango/tshirt-store.git" target="_blank" rel="noopener" class="project-link">⌥ Code</a>
+              <a href="https://tshirt-store-3t5h.onrender.com/"        target="_blank" rel="noopener" class="project-link">↗ Live</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card tilt-card">
+          <div class="project-img">
+            <img src="https://portfolio-website-pi-one-55.vercel.app/assets/WLA.png" alt="White Label Agency" loading="lazy" />
+            <div class="project-img-overlay"></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">White Label Agency</h3>
+            <p class="project-desc">
+              Gen Z-powered full-stack digital agency platform combining
+              custom development, AI integrations, and modern web solutions.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">Express.js</span>
+              <span class="project-tag">MongoDB</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/tonalmango/meetcodeai.git" target="_blank" rel="noopener" class="project-link">⌥ Code</a>
+              <a href="https://meetcodeai.site/"                     target="_blank" rel="noopener" class="project-link">↗ Live</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card tilt-card">
+          <div class="project-img">
+            <img src="https://portfolio-website-pi-one-55.vercel.app/assets/Funngro.png" alt="Funngro Redesign" loading="lazy" />
+            <div class="project-img-overlay"></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Funngro Redesign</h3>
+            <p class="project-desc">
+              Premium, SEO-optimized redesign of Funngro's youth talent
+              marketplace with enhanced UI/UX and conversion-focused design.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">HTML</span>
+              <span class="project-tag">CSS</span>
+              <span class="project-tag">UI/UX</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/tonalmango/Funngro-demo.git" target="_blank" rel="noopener" class="project-link">⌥ Code</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       CERTIFICATES
+       ════════════════════════════════════════ -->
+  <section id="certificates">
+    <div class="container">
+      <p class="section-label">Achievements</p>
+      <h2 class="section-title">Certifications &amp; <span class="accent-word">credentials</span></h2>
+
+      <div class="certs-grid">
+
+        <div class="cert-card">
+          <div class="cert-issuer-row">
+            <span class="cert-issuer">Microsoft</span>
+            <span class="cert-date">Aug 2025</span>
+          </div>
+          <h3 class="cert-title">Python Programming Fundamentals</h3>
+          <p class="cert-desc">
+            Certified Coursera course covering Python foundations — variables,
+            data types, loops, functions, and real-world problem solving.
+          </p>
+          <a href="https://www.coursera.org/account/accomplishments/verify/55YVSL7LO5NI"
+             target="_blank" rel="noopener" class="cert-link">View Credential ↗</a>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-issuer-row">
+            <span class="cert-issuer">GUVI (Google Ed Partner)</span>
+            <span class="cert-date">Aug 2023</span>
+          </div>
+          <h3 class="cert-title">Python Programming Basics</h3>
+          <p class="cert-desc">
+            Google for Education Partner certified course covering Python
+            fundamentals, efficient code writing, and practical applications.
+          </p>
+          <a href="https://www.guvi.in/share-certificate/131W56z39c73Dk37l5"
+             target="_blank" rel="noopener" class="cert-link">View Credential ↗</a>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-issuer-row">
+            <span class="cert-issuer">IBM</span>
+            <span class="cert-date">Aug 2023</span>
+          </div>
+          <h3 class="cert-title">What is Data Science?</h3>
+          <p class="cert-desc">
+            IBM certified course on data science fundamentals — analysis,
+            visualization, machine learning, and statistical methods.
+          </p>
+          <a href="https://www.coursera.org/account/accomplishments/verify/RZORZ1GF7SR2"
+             target="_blank" rel="noopener" class="cert-link">View Credential ↗</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       CONTACT
+       ════════════════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <p class="section-label">Let's Connect</p>
+      <h2 class="section-title">Get in <span class="accent-word">touch</span></h2>
+
+      <div class="contact-grid">
+
+        <!-- Info -->
+        <div class="contact-info">
+          <h3 class="contact-headline">Let's work<br>together.</h3>
+          <p class="contact-desc">
+            Currently open to new opportunities — freelance, full-time,
+            or just a friendly conversation about tech and ideas.
+          </p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item-icon">✉</div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-val">tonalmango@gmail.com</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">📞</div>
+              <div>
+                <div class="contact-item-label">Phone</div>
+                <div class="contact-item-val">+91 89841 78559</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div>
+                <div class="contact-item-label">Location</div>
+                <div class="contact-item-val">Cuttack, Odisha, India</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="contact-name">Your Name</label>
+            <input id="contact-name" type="text" class="form-input" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-email">Email Address</label>
+            <input id="contact-email" type="email" class="form-input" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-message">Message</label>
+            <textarea id="contact-message" class="form-textarea" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+            Send Message →
+          </button>
+          <p id="contact-form-status" class="form-label" style="margin-top: 10px; min-height: 16px;"></p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-brand">Sourav Mishra</span>
+      <span class="footer-copy">© 2026 · Made with ♥ in India</span>
+      <div class="footer-social">
+        <a href="https://github.com/tonalmango" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub profile">GH</a>
+        <a href="mailto:tonalmango@gmail.com" title="Email" aria-label="Send email">EM</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════
+       PONG MINI-GAME
+       ════════════════════════════════════════ -->
+  <button id="pong-trigger" title="Play Pong!">🏓</button>
+
+  <div id="pong-modal">
+    <div class="pong-box">
+      <div class="pong-header">
+        <span class="pong-title">🏓 Mini Pong</span>
+        <button id="pong-close">✕</button>
+      </div>
+      <div class="pong-score">
+        Player: <span id="pong-player-score">0</span>
+        &nbsp;|&nbsp;
+        CPU: <span id="pong-cpu-score">0</span>
+      </div>
+      <canvas id="pong-canvas" width="536" height="300"></canvas>
+      <p class="pong-instructions">Mouse / touch to move your paddle · First to 7 wins</p>
+    </div>
+  </div>
+
+  <!-- ── JS entry point (ES module) ── -->
+  <script type="module" src="js/main.js"></script>
+
+</body>
+</html>
