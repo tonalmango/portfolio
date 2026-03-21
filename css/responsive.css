@@ -90,6 +90,12 @@
 }
 
 @media (max-width: 768px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
   .container { padding: 0 24px; }
   section { padding: 84px 0; }
 
@@ -110,6 +116,9 @@
   .hero-inner {
     padding: 0 24px;
     gap: 28px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
   .hero-tag {
     font-size: 10px;
@@ -143,9 +152,15 @@
     justify-content: center;
   }
   .hero-canvas-wrap { height: 250px; }
+  #hero-canvas {
+    width: 100%;
+    max-width: 100%;
+  }
   .chip {
     padding: 8px 12px;
     font-size: 10px;
+    white-space: normal;
+    max-width: 100%;
   }
 
   .section-title {
@@ -203,6 +218,8 @@
     gap: 16px;
     text-align: center;
     padding: 0 24px;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .pong-box {
@@ -247,8 +264,10 @@
     width: 44px;
     height: 44px;
     font-size: 18px;
-    right: 18px;
-    bottom: 18px;
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    animation: none;
+    box-shadow: 0 8px 20px rgba(79,142,247,0.28);
   }
 }
 
@@ -268,5 +287,11 @@
 
   .hero-chips {
     display: none;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  #pong-trigger:hover {
+    transform: none;
   }
 }
